@@ -47,6 +47,7 @@ async function getGPUInfo(osType) {
       }
     }
   }
+  return gpuName;
 }
 
 module.exports = { getGPUInfo };
