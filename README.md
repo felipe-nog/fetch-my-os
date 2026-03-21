@@ -1,4 +1,4 @@
-# 🚀 My Custom OS Fetcher
+# 🚀 Fetch My OS
 
 ![NPM Version](https://img.shields.io/npm/v/my-custom-os-fetcher?color=blue&style=for-the-badge)
 ![License](https://img.shields.io/npm/l/my-custom-os-fetcher?color=green&style=for-the-badge)
@@ -20,7 +20,7 @@ This project aims to provide detailed information about your system (OS, Kernel,
 Since the package is published on NPM, you can install it globally on your machine with a single command:
 
 ```bash
-npm install -g my-custom-os-fetcher
+npm install -g fetch-my-os
 ```
 
 ## 🚀 Usage
