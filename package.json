@@ -1,10 +1,10 @@
 {
-  "name": "my-custom-os-fetcher",
+  "name": "fetch-my-os",
   "version": "1.0.2",
   "description": "A modern alternative to Neofetch, providing detailed system information in a visually appealing format, made with Node.Js",
-  "main": "index.js",
+  "main": "src/index.js",
   "bin": {
-    "myfetch": "./bin/index.js"
+    "myfetch": "./bin/myfetch.js"
   },
   "scripts": {
     "start": "node ./src/index.js"
