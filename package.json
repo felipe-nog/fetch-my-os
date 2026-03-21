@@ -1,17 +1,25 @@
 {
   "name": "my-custom-os-fetcher",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.1",
+  "description": "A modern alternative to Neofetch, providing detailed system information in a visually appealing format, made with Node.Js",
   "main": "index.js",
   "bin": {
-    "my-fetch": "./index.js"
+    "myfetch": "./index.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "cli",
+    "neofetch",
+    "system-info",
+    "terminal",
+    "os",
+    "linux",
+    "wsl"
+  ],
+  "author": "Felipe Lima Nogueira",
+  "license": "MIT",
   "type": "commonjs",
   "dependencies": {
     "picocolors": "^1.1.1",
