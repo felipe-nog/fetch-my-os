@@ -1,6 +1,6 @@
 {
   "name": "fetch-my-os",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A modern alternative to Neofetch, providing detailed system information in a visually appealing format, made with Node.Js",
   "main": "src/index.js",
   "bin": {
