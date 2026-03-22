@@ -13,7 +13,7 @@ function getAsciiArt(sysInfo) {
       pc.cyan(" ,,,,,,,,,,,,,,,,,,,,,,,,,, "),
       pc.cyan(" ,,,,,,,,,,,,,,,,,,,,,,,,,, "),
       pc.cyan("  ,,,,,,,,,,,, ,,,,,,,,,,,  "),
-      pc.cyan("    ,,,,,,,,,   ,,,,,,,,,   ")
+      pc.cyan("    ,,,,,,,,,   ,,,,,,,,,   "),
     ];
   }
 
@@ -26,7 +26,7 @@ function getAsciiArt(sysInfo) {
       pc.red("     :__________.-' "),
       pc.red("     :_________: "),
       pc.magenta("      :_________`-; "),
-      pc.blue("       `.__.-.__.' ")
+      pc.blue("       `.__.-.__.' "),
     ];
   }
 
@@ -40,10 +40,10 @@ function getAsciiArt(sysInfo) {
         pc.blue("         ███        "),
         pc.blue("       ███          "),
         pc.blue("     ███            "),
-        pc.blue("   ██████████████   ")
+        pc.blue("   ██████████████   "),
       ];
     }
-    
+
     // Fallback para outras distribuições Linux
     return [
       pc.white("         _,,,_    "),
@@ -52,7 +52,7 @@ function getAsciiArt(sysInfo) {
       pc.white("      |  .---.  | "),
       pc.white("      |  \\___/  | "),
       pc.white("       \\       /  "),
-      pc.white("        `-----'   ")
+      pc.white("        `-----'   "),
     ];
   }
 

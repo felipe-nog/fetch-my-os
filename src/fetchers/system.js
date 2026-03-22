@@ -26,16 +26,20 @@ async function getSystemInfo() {
         osType,
         distroName: osData.distro,
         arch: os.arch(),
+        shell: process.env.SHELL || 'N/A',
+        machine: os.machine ? os.machine() : 'N/A',
         release: osData.release,
         username: os.userInfo().username,
         hostname: os.hostname(),
         cpuName: `${cpuData.manufacturer} ${cpuData.brand}`,
         cpuCores: os.cpus().length,
+        terminalTheme: process.env.TERM_PROGRAM || 'N/A',
+        terminalFont: process.env.TERM_FONT || 'N/A',
         usedMemory,
         totalMemory,
         memoryUsagePercentage,
         upTimeInSeconds,
-        upTimeString: `${time.hours}h ${time.minutes}m ${time.seconds}s`
+        upTimeString: `${time.hours}h, ${time.minutes}m`
     };
 }
 
