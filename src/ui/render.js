@@ -1,6 +1,6 @@
 const pc = require("picocolors");
 
-function renderTerminal(sysInfo, gpuName, asciiArt) {
+function renderTerminal(sysInfo, gpuName, asciiArt, isMin) {
   const SECONDS_IN_A_WEEK = 60 * 60 * 24 * 7;
 
   const colorBlock1 = "\x1b[40m   \x1b[41m   \x1b[42m   \x1b[43m   \x1b[44m   \x1b[45m   \x1b[46m   \x1b[47m   \x1b[0m";
@@ -20,15 +20,20 @@ function renderTerminal(sysInfo, gpuName, asciiArt) {
   ];
 
   console.log("");
-  const maxLines = Math.max(asciiArt.length, systemInfo.length);
 
-  for (let i = 0; i < maxLines; i++) {
-    const artLine = asciiArt[i] || "                    ";
-    const infoLine = systemInfo[i] || "";
-    console.log(`${artLine}   ${infoLine}`);
+  if(isMin) {
+    systemInfo.forEach(line => console.log(`  ${line}`));
+  } else {
+    const maxLines = Math.max(asciiArt.length, systemInfo.length);
+    for (let i = 0; i < maxLines; i++) {
+      const artLine = asciiArt[i] || "                    ";
+      const infoLine = systemInfo[i] || "";
+      console.log(`${artLine}   ${infoLine}`);
+    }
   }
 
   console.log("");
+  
   if (sysInfo.upTimeInSeconds > SECONDS_IN_A_WEEK) {
     console.log(`Your system has been up for more than a week! Consider restarting it for better performance. 🔥`);
   } else {

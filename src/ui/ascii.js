@@ -2,7 +2,6 @@ const pc = require("picocolors");
 
 function getAsciiArt(sysInfo) {
   const os = sysInfo.osType.toLowerCase();
-  // Pega o nome da distro e converte para minúsculo para facilitar a busca (ex: "zorin os" -> "zorin")
   const distro = (sysInfo.distroName || "").toLowerCase();
 
   // --- ARTE DO WINDOWS ---
@@ -33,8 +32,6 @@ function getAsciiArt(sysInfo) {
 
   // --- ARTE DO LINUX ---
   if (os === "linux") {
-    
-    // Se a distro for Zorin, renderiza aquele "Z" azul
     if (distro.includes("zorin")) {
       return [
         pc.blue("      ██████████████"),
@@ -47,7 +44,7 @@ function getAsciiArt(sysInfo) {
       ];
     }
     
-    // Fallback para outras distribuições Linux (Pinguim do Tux)
+    // Fallback para outras distribuições Linux
     return [
       pc.white("         _,,,_    "),
       pc.white("       .'     `.  "),
