@@ -4,10 +4,10 @@
   "description": "A modern alternative to Neofetch, providing detailed system information in a visually appealing format, made with Node.Js",
   "main": "src/index.js",
   "bin": {
-    "myfetch": "./bin/myfetch.js"
+    "myfetch": "bin/myfetch.js"
   },
   "scripts": {
-    "start": "node ./bin/myfetch.js"
+    "start": "node bin/myfetch.js"
   },
   "keywords": [
     "cli",
