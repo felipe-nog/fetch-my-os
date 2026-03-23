@@ -1,7 +1,7 @@
 # 🚀 Fetch My OS
 
-![NPM Version](https://img.shields.io/npm/v/my-custom-os-fetcher?color=blue&style=for-the-badge)
-![License](https://img.shields.io/npm/l/my-custom-os-fetcher?color=green&style=for-the-badge)
+![NPM Version](https://img.shields.io/npm/v/fetch-my-os?color=blue&style=for-the-badge)
+![License](https://img.shields.io/npm/l/fetch-my-os?color=green&style=for-the-badge)
 ![Node.js](https://img.shields.io/badge/Node.js-18.x-brightgreen?style=for-the-badge&logo=node.js)
 
 A modern, fast, and customizable alternative to the classic Neofetch, built entirely with **Node.js**. 
@@ -52,7 +52,7 @@ To contribute, follow this workflow:
 
 2. Clone your fork to your local machine:
  ```bash 
- git clone https://github.com/YOUR_USERNAME/my-custom-os-fetcher.git 
+ git clone https://github.com/YOUR_USERNAME/fetch-my-os.git 
  ```
 
 3. Create a new branch for your feature or bugfix:
@@ -73,9 +73,10 @@ git commit -m "feat: add CPU temperature detection"
 git push origin feature/my-new-feature
 ```
 7. Open a Pull Request in the original repository explaining what you changed.
+8. Remember, all commits should be verified by signature.
 
 ## 📝 License
 This project is licensed under the MIT License. See the LICENSE file for more details.
 
-###  Made with ☕ and code by Felipe Lima Nogueira.
+###  Made with ☕ and coded by Felipe Lima Nogueira.
 
