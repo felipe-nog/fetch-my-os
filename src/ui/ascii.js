@@ -1,71 +1,54 @@
+const fs = require("fs");
+const path = require("path");
 const pc = require("picocolors");
 
 function getAsciiArt(sysInfo) {
-  const os = sysInfo.osType.toLowerCase();
-  const distro = (sysInfo.distroName || "").toLowerCase();
+  const os = sysInfo.osType;
+  console.log("");
 
-  // --- ARTE DO WINDOWS ---
-  if (os === "windows") {
-    return [
-      pc.cyan("    ,,,,,,,,,   ,,,,,,,,,  "),
-      pc.cyan("  ,,,,,,,,,,,, ,,,,,,,,,,, "),
-      pc.cyan(" ,,,,,,,,,,,,,,,,,,,,,,,,,, "),
-      pc.cyan(" ,,,,,,,,,,,,,,,,,,,,,,,,,, "),
-      pc.cyan(" ,,,,,,,,,,,,,,,,,,,,,,,,,, "),
-      pc.cyan("  ,,,,,,,,,,,, ,,,,,,,,,,,  "),
-      pc.cyan("    ,,,,,,,,,   ,,,,,,,,,   "),
-    ];
+  let fileName = "generic.txt";
+  let colorize = pc.gray;
+
+  if (os === "Windows") {
+    fileName = "windows.txt";
+    colorize = pc.cyan;
+  } else if (os === "Macos") {
+    fileName = "macos.txt";
+    colorize = pc.green;
+  } else if (os === "Linux") {
+    fileName = "linux.txt";
+    colorize = pc.cyanBright;
   }
+  const filePath = path.join(__dirname, "..", "assets", fileName);
 
-  // --- ARTE DO MACOS ---
-  if (os === "macos") {
-    return [
-      pc.green("            .:'  "),
-      pc.green("         __ :'__ "),
-      pc.yellow("      .'`__`-'__``. "),
-      pc.red("     :__________.-' "),
-      pc.red("     :_________: "),
-      pc.magenta("      :_________`-; "),
-      pc.blue("       `.__.-.__.' "),
-    ];
-  }
+  try {
+    const rawArt = fs.readFileSync(filePath, "utf-8");
+    const lines = rawArt.split("\n").map((line) => line.replace(/\r/g, ""));
 
-  // --- ARTE DO LINUX ---
-  if (os === "linux") {
-    if (distro.includes("zorin")) {
-      return [
-        pc.blue("      ██████████████"),
-        pc.blue("             ███    "),
-        pc.blue("           ███      "),
-        pc.blue("         ███        "),
-        pc.blue("       ███          "),
-        pc.blue("     ███            "),
-        pc.blue("   ██████████████   "),
+    if (os === "macos") {
+      const macColors = [
+        pc.green,
+        pc.green,
+        pc.yellow,
+        pc.red,
+        pc.red,
+        pc.magenta,
+        pc.blue,
       ];
+      return lines.map((line, i) => {
+        const colorFunction = macColors[i] || pc.white;
+        return colorFunction(line);
+      });
     }
 
-    // Fallback para outras distribuições Linux
+    return lines.map((line) => colorize(line));
+  } catch (error) {
     return [
-      pc.white("         _,,,_    "),
-      pc.white("       .'     `.  "),
-      pc.white("      /   O   O \\ "),
-      pc.white("      |  .---.  | "),
-      pc.white("      |  \\___/  | "),
-      pc.white("       \\       /  "),
-      pc.white("        `-----'   "),
+      pc.red("      ██████████████"),
+      pc.red("      ██   ERRO   ██"),
+      pc.red("      ██████████████"),
     ];
   }
-
-  // --- ARTE GENÉRICA (Caso não identifique o SO) ---
-  return [
-    pc.gray("      ██████████████"),
-    pc.gray("      ██          ██"),
-    pc.gray("      ██          ██"),
-    pc.gray("      ██   ????   ██"),
-    pc.gray("      ██          ██"),
-    pc.gray("      ██          ██"),
-    pc.gray("      ██████████████"),
-  ];
 }
 
 module.exports = { getAsciiArt };
