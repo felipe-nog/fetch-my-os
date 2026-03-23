@@ -41,7 +41,11 @@ async function runFetch() {
     let asciiArt;
     if(fs.existsSync(customAsciiPath)) {
       const customArt = fs.readFileSync(customAsciiPath, 'utf-8');
-      asciiArt = customArt.split('\n');
+      if (customArt.trim().length > 0) {
+        asciiArt = customArt.split('\n');
+      } else {
+        asciiArt = getAsciiArt(sysInfo);
+      }
     } else {
       asciiArt = getAsciiArt(sysInfo);
     }
